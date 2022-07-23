@@ -11,14 +11,11 @@
 
 //object//component
 @use "object/component/_content.scss";
-@use "object/component/_slick.scss";
 @use "object/component/_fadein.scss";
 @use "object/component/_rotate.scss";
-@use "object/component/_hamburger.scss";
 @use "object/component/_pagescroll.scss";
 @use "object/component/_form.scss";
 @use "object/component/_form2.scss";
-@use "object/component/_svg.scss";
 @use "object/component/_article.scss";
 @use "object/component/_heading.scss";
 @use "object/component/_awesome.scss";
@@ -26,6 +23,9 @@
 
 
 //object//project
+@use "object/project/_slick.scss";
+@use "object/project/_hamburger.scss";
+@use "object/project/_svg.scss";
 @use "object/project/_nav.scss";
 @use "object/project/_loading.scss";
 @use "object/project/_breadcrumb.scss";

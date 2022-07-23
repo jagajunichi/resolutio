@@ -5,7 +5,7 @@
 
 
 
-  <div class="f-mainsidebarWrap">
+  <div class="f-mainWrap">
     <main class="f-main">
       <!-- 流れ星 -->
       <p class="star shootingstar1"></p>
@@ -31,6 +31,6 @@
     <aside class="f-sidebar">
         <?php include("sidebar.php"); ?>
     </aside>
-  </div><!-- f-mainsidebarWrap -->
+  </div><!-- f-mainWrap -->
   
 <?php get_footer(); ?>

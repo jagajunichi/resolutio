@@ -3,7 +3,7 @@
 
 <img class="l-top__img" alt="画像1" src="<?php echo get_template_directory_uri() ?>/images/img/01.jpeg" />
 
-<div class="f-mainsidebarWrap">
+<div class="f-mainWrap">
   <main class="f-main">
     <!-- 流れ星 -->
     <p class="c-awes__star shootingstar1"></p>
@@ -35,6 +35,6 @@
     <aside class="f-sidebar">
         <?php include("sidebar.php"); ?>
     </aside>
-  </div><!-- f-mainsidebarWrap -->
+  </div><!-- f-mainWrap -->
 
 <?php get_footer(); ?>

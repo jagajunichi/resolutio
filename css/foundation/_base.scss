@@ -10,17 +10,6 @@
    box-sizing: border-box;
 }
 
-
-.f-body{
-   width: 100%;
-   position: relative;
-   background: lighten(mix.$color-theme, 80%);
-}
-
-.f-header {
-
-}
-
 .f-breadcrumb {
    width: 100%;
    background: transparent;
@@ -29,7 +18,13 @@
    font-size: 30px;
 }
 
-.f-mainsidebarWrap{
+.f-body{
+   width: 100%;
+   position: relative;
+   background: lighten(mix.$color-theme, 80%);
+}
+
+.f-mainWrap{
    width: 100%;
    display: flex;
    background: lighten(mix.$color-theme, 75%);
@@ -38,9 +33,9 @@
 .f-left,
 .f-right{
    flex: 1;
-      @include mix.mq-down(md) {
-         display: none;
-      }
+   @include mix.mq-down(md) {
+      display: none;
+   }
 }
 
 .f-main {
@@ -77,6 +72,9 @@
 html{
    font-size: 16px;
    font-family: 'Noto Sans JP','Open Sans',sans-serif;
+   @include mix.mq-down(md) {
+      font-size: 13px;
+   }
    @include mix.mq-down(sm) {
       font-size: 10px;
    }
@@ -106,7 +104,6 @@ p {
 }
 
 a:-webkit-any-link {
-   // color: rgb(255, 255, 255);
    color: inherit;
 }
 

@@ -1,10 +1,11 @@
-<!-- ブログに投稿した記事の一覧を出力 -->
+<!-- archive は 一覧の出力 -->
+<!-- デフォルトではブログに投稿した記事の一覧を出力 -->
 <?php get_header(); ?>
 
 <img class="l-top__img" alt="画像1" src="<?php the_post_thumbnail_url(); ?>" />
 
 
-<div class="f-mainsidebarWrap">
+<div class="f-mainWrap">
   <main class="f-main">
   <?php custom_breadcrumb(); ?>
 
@@ -38,6 +39,6 @@
     <aside class="f-sidebar">
         <?php include("sidebar.php"); ?>
     </aside>
-  </div><!-- f-mainsidebarWrap -->
+  </div><!-- f-mainWrap -->
 
 <?php get_footer(); ?>

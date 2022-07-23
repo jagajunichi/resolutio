@@ -11,7 +11,7 @@
   </div>
   
 
-  <div class="f-mainsidebarWrap f-sticky">
+  <div class="f-mainWrap f-sticky">
     <div class="f-left"></div>
     
     <main class="f-main">
@@ -100,7 +100,7 @@
         <?php include("sidebar.php"); ?>
     </aside>
     <div class="f-right"></div>
-  </div><!-- f-mainsidebarWrap -->
+  </div><!-- f-mainWrap -->
 
 
 <?php get_footer(); ?>
