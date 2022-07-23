@@ -1,0 +1,310 @@
+/* -------------------------------------------------------
+   animation-keyframe
+------------------------------------------------------- */
+//
+//fadeup
+//
+.ak-fadeup--noreverse:hover {
+   animation: fadeup--noreverse .5s ease-out forwards;
+}
+
+@keyframes fadeup--noreverse {
+   0% {
+      transform: translateY(0);
+   }
+
+   100% {
+      transform: translateY(-100px);
+   }
+}
+
+.ak-fadeup{
+   animation: fadeup-out .5s ease-out forwards;
+}
+
+.ak-fadeup:hover {
+   animation: fadeup .5s ease-out forwards;
+}
+
+//親要素にホバーしたときに動作したい場合
+// .parent:hover .ak-fadeup {
+//    animation: fadeup .5s ease-out forwards;
+// }
+
+   
+@keyframes fadeup {
+   0% {
+      transform: translateY(100px);
+   }
+
+   100% {
+      transform: translateY(0);
+   }
+}
+
+@keyframes fadeup-out {
+   0% {
+      transform: translateY(0);
+   }
+
+   100% {
+      transform: translateY(100px);
+   }
+}
+
+//
+//fadedown
+//
+.ak-fadedown--noreverse:hover {
+   animation: fadedown--noreverse .5s ease-out forwards;
+}
+
+@keyframes fadedown--noreverse {
+   0% {
+      transform: translateY(0);
+   }
+
+   100% {
+      transform: translateY(100px);
+   }
+}
+
+
+.ak-fadedown{
+   animation: fadedown-out .5s ease-out forwards;
+}
+
+.ak-fadedown:hover {
+   animation: fadedown .5s ease-out forwards;
+}
+   
+@keyframes fadedown {
+   0% {
+      transform: translateY(-100px);
+   }
+
+   100% {
+      transform: translateY(0);
+   }
+}
+
+@keyframes fadedown-out {
+   0% {
+      transform: translateY(0);
+   }
+
+   100% {
+      transform: translateY(-100px);
+   }
+}
+
+//
+//faderight
+//
+.ak-faderight--noreverse:hover {
+   animation: faderight--noreverse .5s ease-out forwards;
+}
+
+@keyframes faderight--noreverse {
+   0% {
+      transform: translateX(0);
+   }
+
+   100% {
+      transform: translateX(100px);
+   }
+}
+
+.ak-faderight{
+   animation: faderight-out .5s ease-out forwards;
+}
+
+.ak-faderight:hover {
+   animation: faderight .5s ease-out forwards;
+}
+   
+@keyframes faderight {
+   0% {
+      transform: translateX(-100px);
+   }
+
+   100% {
+      transform: translateX(0);
+   }
+}
+
+@keyframes faderight-out {
+   0% {
+      transform: translateX(0);
+   }
+
+   100% {
+      transform: translateX(-100px);
+   }
+}
+
+//
+//fadeleft
+//
+.ak-fadeleft--noreverse:hover {
+   animation: fadeleft--noreverse .5s ease-out forwards;
+}
+
+@keyframes fadeleft--noreverse {
+   0% {
+      transform: translateX(0);
+   }
+
+   100% {
+      transform: translateX(-100px);
+   }
+}
+
+.ak-fadeleft{
+   animation: fadeleft-out .5s ease-out forwards;
+}
+
+.ak-fadeleft:hover {
+   animation: fadeleft .5s ease-out forwards;
+}
+   
+@keyframes fadeleft {
+   0% {
+      transform: translateX(100px);
+   }
+
+   100% {
+      transform: translateX(0);
+   }
+}
+
+@keyframes fadeleft-out {
+   0% {
+      transform: translateX(0);
+   }
+
+   100% {
+      transform: translateX(100px);
+   }
+}
+
+
+/* -------------------------------------------------------
+   animation-transition
+------------------------------------------------------- */
+//
+//fadeup
+//
+.at-fadeup {
+   transform: translateY(100px);
+   transition:all 0.5s ease-out;
+}
+// cubic-bezier(1, 0, 0.03, 1.01)
+
+.at-fadeup:hover {
+   transform: translateY(0);
+}
+
+//親要素にホバーしたときに動作したい場合
+// .dummywrap:hover .at-fadeup {
+//    transform: translateY(0);
+// }
+
+//
+//fadedown
+//
+.at-fadedown {
+   transform: translateY(-100px);
+   transition: all 0.5s ease-out;
+}
+
+.at-fadedown:hover {
+   transform: translateY(0);
+}
+
+//
+//faderight
+//
+.at-faderight {
+   transform: translateX(-100px);
+   transition: all 0.5s ease-out;
+}
+
+.at-faderight:hover {
+   transform: translateX(0);
+}
+
+//
+//fadeleft
+//
+.at-fadeleft {
+   transform: translateX(100px);
+   transition: all 0.5s ease-out;
+}
+
+.at-fadeleft:hover {
+   transform: translateX(0);
+}
+
+/* -------------------------------------------------------
+   jquery
+------------------------------------------------------- */
+//
+//fadeup
+//
+.js-scroll-fadeup {
+   opacity: 0;
+   transform: translateY(100px);
+
+   transition:all 1s ease-out;
+}
+
+.js-scroll-fadeup.is-scroll{
+   opacity: 1;
+   transform: translateY(0);
+}
+
+
+//
+//fadedown
+//
+.js-scroll-fadedown {
+   opacity: 0;
+   transform: translateY(-100px);
+   transition:all 1s ease-out;
+}
+
+.js-scroll-fadedown.is-scroll{
+   opacity: 1;
+   transform: translateY(0);
+}
+
+//
+//faderight
+//
+.js-scroll-faderight {
+   opacity: 0;
+   transform: translateX(-150px);
+   // transition: all 1s ease-out;
+   transition: all 2s cubic-bezier(0, 0.93, 0.3, 0.99);
+}
+
+.js-scroll-faderight.is-scroll {
+   opacity: 1;
+   transform: translateX(0);
+}
+
+//
+//fadeleft
+//
+.js-scroll-fadeleft {
+   opacity: 0;
+   transform: translateX(150px);
+   // transition: all 1s ease-out;
+   transition: all 2s cubic-bezier(0, 0.93, 0.3, 0.99);
+}
+
+.js-scroll-fadeleft.is-scroll {
+   opacity: 1;
+   transform: translateX(0);
+}

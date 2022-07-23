@@ -1,0 +1,41 @@
+//foundation
+@use "foundation/_reset.scss";
+@use "foundation/_base.scss";
+
+
+//layout
+@use "layout/_header.scss";
+@use "layout/_footer.scss";
+@use "layout/_main.scss";
+@use "layout/_sidebar.scss";
+
+//object//component
+@use "object/component/_content.scss";
+@use "object/component/_slick.scss";
+@use "object/component/_fadein.scss";
+@use "object/component/_rotate.scss";
+@use "object/component/_hamburger.scss";
+@use "object/component/_pagescroll.scss";
+@use "object/component/_form.scss";
+@use "object/component/_form2.scss";
+@use "object/component/_svg.scss";
+@use "object/component/_article.scss";
+@use "object/component/_heading.scss";
+@use "object/component/_awesome.scss";
+@use "object/component/_table.scss";
+
+
+//object//project
+@use "object/project/_nav.scss";
+@use "object/project/_loading.scss";
+@use "object/project/_breadcrumb.scss";
+
+//object//utility
+@use "object/utility/_dummy.scss";
+@use "object/utility/_design.scss";
+@use "object/utility/_margin.scss";
+@use "object/utility/_position.scss";
+@use "object/utility/_size.scss";
+@use "object/utility/_text.scss";
+@use "object/utility/_height.scss";
+

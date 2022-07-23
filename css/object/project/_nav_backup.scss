@@ -1,0 +1,150 @@
+/* -------------------------------------------------------
+   nav
+------------------------------------------------------- */
+
+@use "../../global/global"as mix;
+
+.global-nav {
+   width: 100%;
+   height: 70px;
+   position: absolute;
+   // position: fixed;
+   // top: 0;
+   // left: 0;
+   color: rgb(255, 255, 255);
+   font-size: 18px;
+   font-weight: 700;
+   background-color: rgb(255, 169, 56);
+   box-shadow: 0px 5px 3px rgba(0, 0, 0, .2);
+   z-index: 10;
+}
+
+.global-nav .nav-list {
+   display: flex;
+   justify-content: space-between;
+   list-style: none;
+   margin: 10px 0;
+   padding: 0;
+}
+
+.global-nav .nav-list .nav-item {
+   flex: 1;
+}
+
+.global-nav .nav-list .nav-item a {
+   border-right: 2px solid #ccc;
+   display: block;
+   padding: 0.8em 0.3em;
+   text-align: center;
+   text-decoration: none;
+}
+
+.global-nav .nav-list .nav-item:last-child a {
+   border-right: none;
+}
+
+
+@media #{map-get(mix.$breakpoint-up, md)} {//pc
+   .nav-item {
+      position: relative;
+   }
+
+   .nav-item-sub {
+      background-color: rgb(255, 169, 56);
+      position: absolute;
+      left: 0;
+      top: 60px;
+      transition: all 0.4s ease;
+      display: block;
+      transform-origin: top;
+      transform: scaleY(0);
+      text-align: center;
+      padding-bottom: 5px;
+      box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .5);
+      width: calc((100vw / 4) - 5px);
+   }
+
+   .nav-item-sub .nav-item-sub-inner {
+      display: flex;
+      margin: 0 auto;
+   }
+
+   .nav-item-sub .nav-item-sub-inner ul {
+      margin: 0 auto;
+   }
+
+   .global-nav .nav-list .nav-item-sub a {
+      border-right: none;
+   }
+
+   .nav-item:hover .nav-item-sub {
+      transform-origin: top;
+      transform: scaleY(1);
+   }
+
+   .nav-item:hover li:not(:last-child) {
+      border-bottom: 2px solid #ccc;
+   }
+
+   .global-nav .nav-list .nav-item:hover .nav-item-sub-inner a {
+      border-right: none;
+   }
+}
+
+
+
+@media #{map-get(mix.$breakpoint-down, md)} {/* スマホ */
+
+   .global-nav {
+      background-color: transparent;
+      z-index: 10;
+      height: 0;
+      left: 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+   }
+
+   .global-nav .nav-list {
+      background: rgba(255, 202, 132, 0.8);//ハンバーガー押したときに広がる背景色
+      display: none;
+      left: 50%;
+      padding: 10px;
+      position: absolute;
+      transform: translate(-50%, 0%);
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+   }
+
+
+   .global-nav li:hover {
+      background-color: rgb(212, 234, 255, 0.8);
+   }
+
+   .global-nav .nav-list li:hover a {
+      color: #333;
+   }
+
+   .global-nav .nav-list .nav-item a {
+      border-bottom: 1px solid rgb(73, 73, 73);
+      border-right: none;
+      color: rgb(51, 51, 51);//ハンバーガーのメニュー色
+      padding: 1rem 1rem;
+      text-align: left;
+   }
+
+   .global-nav .nav-list .nav-item:last-child a {
+      border-bottom: none;
+   }
+
+   .global-nav .nav-list .nav-item:first-child a {
+      border-left: none;
+   }
+
+   .nav-item-sub {
+      display: none;
+   }
+
+}

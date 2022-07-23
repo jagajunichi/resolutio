@@ -1,0 +1,30 @@
+/* -------------------------------------------------------
+   slick
+------------------------------------------------------- */
+@use "../../global/global"as mix;
+.silckWrap {
+    width: 100%;
+    top:0;
+    @include mix.mq-down(md) {
+        width:100vw;
+    }
+}
+
+.js-slick img{
+    height: 100vh;
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+//サイドの画像をぼかす
+.slick-slide:not(.slick-center) {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+    transition: 0.2s linear;
+}

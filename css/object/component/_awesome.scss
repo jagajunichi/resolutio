@@ -1,0 +1,76 @@
+/* -------------------------------------------------------
+   awesome
+------------------------------------------------------- */
+
+.c-awes__star{
+    position: absolute;
+}
+
+.c-awes__star::before {
+    font-family: "Font Awesome 5 Free";
+    content: '\f005';
+    font-weight: 900;
+    color: orange;
+    font-size: 30px;
+}
+
+.c-awes__star--Lg::before {
+    font-size: 70px;
+}
+
+.shootingstar1{
+    animation:shootingstar1 10s linear infinite;
+}
+.shootingstar2{
+    animation:shootingstar2 10s linear infinite;
+}
+
+
+
+@keyframes shootingstar1{
+    0% {
+        top:0px;
+        left:0px;
+    }
+
+    5%{
+        top:2000px;
+        left:2000px;
+    }
+
+    100%{
+        top:2000px;
+        left:2000px;
+    }
+}
+
+
+@keyframes shootingstar2{
+    0% {
+        top:1000px;
+        left:0px;
+    }
+
+    5%{
+        top:3000px;
+        left:2000px;
+    }
+
+    100%{
+        top:3000px;
+        left:2000px;
+    }
+}
+
+
+.c-awes__xmark {
+
+}
+
+.c-awes__xmark::before {
+    font-family: "Font Awesome 5 Free";
+    content: '\f00d';
+    font-weight: 900;
+    color: rgb(252, 108, 41);
+    font-size: 30px;
+}

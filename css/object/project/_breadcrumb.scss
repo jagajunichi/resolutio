@@ -1,0 +1,115 @@
+/* -------------------------------------------------------
+   パンくずリスト
+------------------------------------------------------- */
+@use "../../global/global"as mix;
+
+$breadcrumb-color:rgb(2, 64, 134);
+
+.cp_breadcrumb *,
+.cp_breadcrumb *:after,
+.cp_breadcrumb *:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+.cp_breadcrumb {
+    font-size: 10px;
+    overflow: hidden;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+}
+
+.cp_breadcrumb li {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+.cp_breadcrumb a {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0.9em 0.5em 0.9em 2.2em;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: $breadcrumb-color;
+}
+
+.cp_breadcrumb li:first-child a {
+    padding-left: 0.8em;
+    border-radius: 5px 0 0 5px;
+}
+
+.cp_breadcrumb a::after,
+.cp_breadcrumb a::before {
+    position: absolute;
+    top: 50%;
+    right: -1.5em;
+    margin-top: -1.6em;
+    content: '';
+    border-top: 1.6em solid transparent;
+    border-bottom: 1.6em solid transparent;
+    border-left: 1.5em solid;
+}
+
+.cp_breadcrumb a::after {
+    z-index: 2;
+    border-left-color: $breadcrumb-color;
+}
+
+.cp_breadcrumb a::before {
+    z-index: 1;
+    right: -1.8em;
+    border-left-color: #ffffff;
+}
+
+.cp_breadcrumb li:nth-child(2) a {
+    background: lighten($breadcrumb-color,10%);
+}
+
+.cp_breadcrumb li:nth-child(2) a:after {
+    border-left-color: lighten($breadcrumb-color, 10%);
+}
+
+.cp_breadcrumb li:nth-child(3) a {
+    background: lighten($breadcrumb-color, 20%);
+}
+
+.cp_breadcrumb li:nth-child(3) a:after {
+    border-left-color: lighten($breadcrumb-color, 20%);
+}
+
+.cp_breadcrumb li:nth-child(4) a {
+    background: lighten($breadcrumb-color, 25%);
+}
+
+.cp_breadcrumb li:nth-child(4) a:after {
+    border-left-color: lighten($breadcrumb-color, 25%);
+}
+
+.cp_breadcrumb li:nth-child(5) a {
+    background: lighten($breadcrumb-color, 30%);
+}
+
+.cp_breadcrumb li:nth-child(5) a:after {
+    border-left-color: lighten($breadcrumb-color, 30%);
+}
+
+.cp_breadcrumb li:last-child a {
+    cursor: default;
+    pointer-events: none;
+    color: black;
+    background: lighten($breadcrumb-color, 40%);
+    border-radius: 0 5px 5px 0;
+}
+
+.cp_breadcrumb li:last-child a:hover {
+    background: none;
+}
+
+.cp_breadcrumb li:last-child a::before,
+.cp_breadcrumb li:last-child a::after {
+    content: normal;
+}

@@ -1,0 +1,14 @@
+/* -------------------------------------------------------
+   design
+------------------------------------------------------- */
+.u-boxshadow{
+    box-shadow: 0 10px 5px 0 rgba(0, 0, 0, .5);
+}
+
+.u-dropshadow{
+    filter:drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+}
+
+.u-blockCenter{
+    margin: 0 auto;
+}

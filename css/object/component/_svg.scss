@@ -1,0 +1,46 @@
+@use "../../global/global"as mix;
+
+
+
+#MASK{
+    position: absolute;
+    transform: translateY(50%) translateX(-51%);
+    top: 10vh;
+    left:50vw;
+    width: 75%;
+    @include mix.mq-down(md) {
+        width: 95%;
+    }
+}
+#text{
+    position: absolute;
+    transform: translateY(50%) translateX(-51%);
+    top: 10vh;
+    left:50vw;
+    width: 75%;
+    @include mix.mq-down(md) {
+        width: 95%;
+    }
+}
+
+
+.cls-1{
+    fill: none;
+}
+
+
+.cls-2 {
+    stroke: none;
+    stroke-miterlimit: 10;
+    fill-opacity: 0;
+    transition: fill-opacity 1s;
+}
+
+.cls-2.is-ready {
+    stroke: #fff;
+}
+
+.cls-2.is-end {
+    fill: #fff;
+    fill-opacity: 1;
+}

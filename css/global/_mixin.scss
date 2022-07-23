@@ -1,0 +1,81 @@
+/* -------------------------------------------------------
+   mixin
+------------------------------------------------------- */
+
+$color-theme:#046070;
+
+$color-ornge:#ff9c19;
+
+$color-mosgreen:#80B9AA;
+$color-paleWhiteLilyeen:#FFFBD2;
+$color-alstroemeria:#FFD1B7;
+$color-usubeni:#FF8688;
+$color-ebizome:#7D5C68;
+
+$color-palette1:#{$color-mosgreen} #{$color-paleWhiteLilyeen} #{$color-alstroemeria} #{$color-usubeni} #{$color-ebizome};
+
+
+
+$sm-width:400px;
+$md-width:768px;
+$lg-width:1000px;
+$xl-width:1200px;
+
+
+// min-width
+$breakpoint-up: ('sm': 'screen and (min-width: 400px)',
+   'md': 'screen and (min-width: 768px)',
+   'lg': 'screen and (min-width: 1000px)',
+   'xl': 'screen and (min-width: 1200px)',
+) !default;
+
+// max-width
+$breakpoint-down: ('sm': 'screen and (max-width: 399px)',
+   'md': 'screen and (max-width: 767px)',
+   'lg': 'screen and (max-width: 999px)',
+   'xl': 'screen and (max-width: 1199px)',
+) !default;
+
+// @mixinの定義
+@mixin mq-up($breakpoint: md) {
+   @media #{map-get($breakpoint-up, $breakpoint)} {
+      @content;
+   }
+}
+
+@mixin mq-down($breakpoint: md) {
+   @media #{map-get($breakpoint-down, $breakpoint)} {
+      @content;
+   }
+}
+
+
+//
+//color-mixin
+//
+//stripe
+@mixin stripes($direction, $colors) {
+   $length: length($colors);
+
+   @if $length>1 {
+      $stripes: ();
+
+      @for $i from 1 through $length {
+         $stripe: (100% / $length) * ($i - 1);
+
+         @if $i>1 {
+            $previous-color: nth($colors, $i - 1);
+            $stripes: append($stripes, $previous-color $stripe, comma);
+         }
+
+         $stripes: append($stripes, nth($colors, $i) $stripe, comma);
+      }
+
+      // background: linear-gradient($direction, $stripes) fixed;グラデーションを固定する場合
+      background: linear-gradient($direction, $stripes);
+   }
+
+   @else if $length==1 {
+      background-color: $colors;
+   }
+}

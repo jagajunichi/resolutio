@@ -1,0 +1,120 @@
+@use "../../global/global"as mix;
+
+
+.p-nav{
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 100;
+}
+
+.p-nav.is-finish{//手描きアニメーションが終わったら
+    .p-navList .p-navItem a{
+        color: #fff;
+    }
+}
+
+.p-nav.is-scroll {
+    //スクロールしたら
+    .p-navList .p-navItem a:after {
+        @include mix.stripes(to left, rgba(0, 0, 0, 0.5) rgba(255, 255, 255, 1) #3392af #01465a);
+    }
+}
+
+.p-nav .p-navList {
+    display: flex;
+    height: 50px;
+}
+
+.p-nav .p-navList .p-navItem {
+    // padding: 0 2px;
+    margin: 0 2px;
+    height: 100%;
+    width: 130px;
+    // flex: 1;//画面いっぱいに表示する時
+    overflow: hidden;
+}
+
+.p-nav .p-navList .p-navItem a {
+    width: 100%;
+    text-decoration: none;
+    color: #01465a;
+    display: block;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+    font-weight: bold;
+    position: relative;
+    padding: 0 10px;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    transition: all 1s ease-out;
+}
+
+.p-nav .p-navList .p-navItem a:after {
+    position: absolute;
+    content: '';
+    right: 0%;
+    width: 400%;
+    height: 100%;
+    @include mix.stripes(to left,rgba(255, 255, 255,0) rgba(255,255,255,1) #3392af #01465a);
+    z-index: -1;
+    transition: 0.6s ease-in-out;
+}
+
+.p-nav .p-navList .p-navItem a:hover {
+    color: #fff;
+}
+
+.p-nav .p-navList .p-navItem a:hover:after {
+    right: -300%;
+}
+
+
+@media #{map-get(mix.$breakpoint-down, md)} {
+    .p-nav{
+        background-color: transparent;
+        z-index: 10;
+        height: 0;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    .p-nav .p-navList {
+        background: rgba(mix.$color-theme, 0.8); //ハンバーガー押したときに広がる背景色
+        display: none;
+        left: 50%;
+        padding: 10px;
+        position: absolute;
+        transform: translate(-50%, 0%);
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .p-nav .p-navList .p-navItem a {
+        color: #fff;
+    }
+
+    .p-nav .p-navList .p-navItem {
+        height: 10%;
+    }
+
+    
+    .p-nav .p-navList .p-navItem a:after{
+        height: 0;
+        width: 0;
+    }
+
+
+
+}

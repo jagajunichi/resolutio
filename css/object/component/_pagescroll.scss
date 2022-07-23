@@ -1,0 +1,111 @@
+/* -------------------------------------------------------
+   pagescroll
+------------------------------------------------------- */
+   
+   #js-pageTop {
+      width: 90px;
+      height: 90px;
+      position: fixed;
+      right: 2px;
+      /* bottom: 0; */
+      bottom: -100px;
+      background: #ef3f98;
+      opacity: 0.6;
+      border-radius: 50%;
+      z-index: 2;
+   
+   }
+   
+   #js-pageTop a {
+      position: relative;
+      display: block;
+      width: 90px;
+      height: 90px;
+      text-decoration: none;
+   }
+   
+   #js-pageTop a::before {
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      content: '\f102';
+      font-size: 25px;
+      color: #fff;
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      top: -40px;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      text-align: center;
+   }
+   
+   #js-pageTop a::after {
+      content: 'PAGE  TOP';
+      font-size: 13px;
+      color: #fff;
+      position: absolute;
+      top: 45px;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      text-align: center;
+   }
+
+
+
+
+
+   
+   #js-pageBottom {
+      width: 90px;
+      height: 90px;
+      position: fixed;
+      left: 2px;
+      /* bottom: 0; */
+      bottom: -100px;
+      background: #3f85ef;
+      opacity: 0.6;
+      border-radius: 50%;
+      z-index: 2;
+   }
+   
+   #js-pageBottom a {
+      position: relative;
+      display: block;
+      width: 90px;
+      height: 90px;
+      text-decoration: none;
+   }
+   
+   #js-pageBottom a::before {
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      content: '\f103';
+      font-size: 25px;
+      color: #fff;
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      top: -40px;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      text-align: center;
+   }
+   
+   #js-pageBottom a::after {
+      content: 'PAGE BOTTOM';
+      font-size: 13px;
+      color: #fff;
+      position: absolute;
+      top: 45px;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      text-align: center;
+   }
