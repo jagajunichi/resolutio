@@ -83,7 +83,7 @@ form {
         transform: translateY(-100px);
     }
 
-    @include mix.mq-down(sm) {
+    @include mix.mq-down(md) {
         width: 95%;
     }
 
@@ -141,8 +141,8 @@ label {
 
 input {
     background: linear-gradient(to bottom, transparent 92%, $color 8%) no-repeat;
-    background-position: -300px 0;
-    background-size: 300px 100%;
+    background-size: 1000px 100%;
+    background-position: -1000px 0;
     display: block;
     // 変更
     // width: 250px;
