@@ -1,77 +1,7 @@
 //ブレイクポイントの設定
 var breakpoint_sm = 400;
 var breakpoint_md = 768;
-var breakpoint_lg = 1000;
-var breakpoint_xl = 1200;
-
-
-$(function () {
-    // デモのチェックボタンにチェックを入れる
-    $(window).on('load', function () {
-        setTimeout(function(){
-            $('.demo--c').prop('checked', true);
-        },1000)
-        
-      //北千里の場合ヘッダが無いのでその調整
-      if (document.URL.match("kitasenri")) {
-        $(".f-header h1").css("margin-top", "10px");
-        $(".f-header h1").css("font-size", "50px");
-        if (window.innerWidth < 768) {
-          $(".f-header h1").css("margin-top", "0");
-          $(".f-header h1").css("font-size", "32px");
-        }
-      }
-    });
-
-    var appear = false;
-    var pagetop = $('#js-pageTop');
-    var pagebottom = $('#js-pageBottom');
-
-    var doch=0;
-    var winh=0;
-    var bottom=0;
-
-    
-    /* var doch = document.body.clientHeight; */ //ページ全体の高さ
-    $(window).on('load', function () {
-        doch = $(document).innerHeight(); //ページ全体の高さ
-        winh = $(window).innerHeight(); //ウィンドウの高さ
-        bottom = doch - winh; //ページ全体の高さ - ウィンドウの高さ = ページの最下部位置
-    });
-
-
-    $(window).scroll(function () {
-      if ($(this).scrollTop() > 100) {  //100pxスクロールしたら
-        if (appear == false) {
-          appear = true;
-          pagetop.stop().animate({
-            'bottom': '2px' //下から2pxの位置に
-          }, 300); //0.3秒かけて現れる
-          pagebottom.stop().animate({
-            'bottom': '2px' //下から2pxの位置に
-          }, 300); //0.3秒かけて現れる
-        }
-      } else {
-        if (appear) {
-          appear = false;
-          pagetop.stop().animate({
-            'bottom': '-100px'
-          }, 300); //0.3秒かけて隠れる
-          pagebottom.stop().animate({
-            'bottom': '-100px'
-          }, 300); //0.3秒かけて隠れる
-        }
-      }
-    });
-    pagetop.click(function () {
-      $('body, html').animate({ scrollTop: 0 }, 500); //0.5秒かけてトップへ戻る
-      return false;
-    });
-    pagebottom.click(function () {
-      $('body, html').animate({ scrollTop: bottom }, 500); //0.5秒かけてトップへ戻る
-      return false;
-    });
-  });
+var breakpoint_lg = 1200;
 
 // ナビのアニメーション
 // $(function () {
@@ -91,6 +21,8 @@ $(function () {
 //   });
 // }); 
 
+
+//ハンバーガーメニュー
 $(function () {
   $('.menu-trigger').on('click', function () {
     if ($(".p-navList").css("display") === "block") {
@@ -110,9 +42,9 @@ $(function () {
 
 
 
-// Windowサイズによってスタイルを変更
+// Windowサイズによってヘッダーメニューのスタイルを変更
 $(window).on("load resize", function () {
-  if (window.innerWidth > 768) {
+  if (window.innerWidth > breakpoint_md) {
     $(".global-nav .nav-list").css("display", "flex");
   } else {
     $(".global-nav .nav-list").css("display", "none");
@@ -127,6 +59,8 @@ $(".nav-item").on("click", function () {
   }
 });
 
+
+//スライドアニメーション
 $(function () {
   $(".js-slick").slick({
     autoplay: true, // 自動再生を設定
@@ -156,7 +90,7 @@ $(function () {
     $(fadeIn).each(function () {
       var offset = $(this).offset().top;
       if (scroll > offset - windowHeight + 250) {
-        $(this).addClass("is-scroll");
+        $(this).addClass("is-scrolled");
       }
     });
   });
@@ -164,37 +98,23 @@ $(function () {
 
 $(function () {
   var show = $("[class*='js-scroll-show']");
-  var windowHeight = $(window).height();
-  if ($(location).attr('pathname') !== "/") {
-    windowHeight = 500;
-  }
+  // var windowHeight = $(window).height();
+  // if ($(location).attr('pathname') !== "/") {
+  //   windowHeight = 500;
+  // }
   $(window).on('scroll', function () {
     $(show).each(function () {
       var scroll = $(window).scrollTop();
 
-      if (scroll > windowHeight) {
-        $(this).addClass("is-scroll");
+      if (scroll > 10) {
+        $(this).addClass("is-scrolled");
       }
       else{
-        $(this).removeClass("is-scroll");
+        $(this).removeClass("is-scrolled");
       }
     });
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //vivus 描画アニメーション
@@ -230,12 +150,12 @@ $(window).on("load", function () {
   var jsdomt = $(".p-nav"); 
   if ($(location).attr('pathname') == "/testpage2/") {
 
-    $(jsdomt).addClass("is-finish");
+    $(jsdomt).addClass("is-finished");
 
   }
   else{
     $(jsdomt).delay(2000).queue(function(){
-      $(this).addClass("is-finish").dequeue;
+      $(this).addClass("is-finished").dequeue;
     });
   }
 });

@@ -259,7 +259,7 @@
    transition:all 1s ease-out;
 }
 
-.js-scroll-fadeup.is-scroll{
+.js-scroll-fadeup.is-scrolled{
    opacity: 1;
    transform: translateY(0);
 }
@@ -274,7 +274,7 @@
    transition:all 1s ease-out;
 }
 
-.js-scroll-fadedown.is-scroll{
+.js-scroll-fadedown.is-scrolled{
    opacity: 1;
    transform: translateY(0);
 }
@@ -289,7 +289,7 @@
    transition: all 2s cubic-bezier(0, 0.93, 0.3, 0.99);
 }
 
-.js-scroll-faderight.is-scroll {
+.js-scroll-faderight.is-scrolled {
    opacity: 1;
    transform: translateX(0);
 }
@@ -304,7 +304,7 @@
    transition: all 2s cubic-bezier(0, 0.93, 0.3, 0.99);
 }
 
-.js-scroll-fadeleft.is-scroll {
+.js-scroll-fadeleft.is-scrolled {
    opacity: 1;
    transform: translateX(0);
 }
