@@ -66,6 +66,7 @@
         <li class="p-navItem"><a href="/category/blog/">BLOG</a></li>
         <li class="p-navItem"><a href="/about">ABOUT</a></li>
         <li class="p-navItem"><a href="/form">CONTACT</a></li>
+        <li class="p-navItem"><a href="/private">PRIVATE</a></li>
       </ul>
     </nav>
 

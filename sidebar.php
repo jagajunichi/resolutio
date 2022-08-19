@@ -6,6 +6,7 @@
     $my_posts = array(
       'post_type' => 'post', //カテゴリは特定せず
       'posts_per_page'=> '100', //とりあえず100件
+      'category_name'=> 'blog' 
     );
     $wp_query = new WP_Query($my_posts);
 
